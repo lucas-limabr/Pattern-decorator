@@ -1,13 +1,11 @@
-package core;
-
-import java.time.LocalDateTime;
+package com.designPattern.decorator.core;
 
 public class Carro implements Automovel {
 
     private String modelo;
     private float precoBase;
     String AIRBAG = "AIRBAG - ";
-    String SENSOR_RE = "SENSOR DE RÉ - ";
+    String SENSOR_RE = "SENSOR DE RÉ";
 
     public Carro(float precoBase, String modelo)
     {

@@ -1,4 +1,4 @@
-package core;
+package com.designPattern.decorator.core;
 
 public class CambioAutomatico extends AutomovelDecorator{
 
@@ -13,6 +13,6 @@ public class CambioAutomatico extends AutomovelDecorator{
 
     @Override
     public String getItemSerie() {
-        return "Câmbio Automático -";
+        return "Câmbio Automático";
     }
 }

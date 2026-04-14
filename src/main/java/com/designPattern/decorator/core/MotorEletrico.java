@@ -1,4 +1,4 @@
-package core;
+package com.designPattern.decorator.core;
 
 public class MotorEletrico extends AutomovelDecorator{
 
@@ -13,6 +13,6 @@ public class MotorEletrico extends AutomovelDecorator{
 
     @Override
     public String getItemSerie() {
-        return "Motor elétrico -";
+        return "Motor elétrico";
     }
 }

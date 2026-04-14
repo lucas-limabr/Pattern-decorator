@@ -1,5 +1,4 @@
-package core;
-
+package com.designPattern.decorator.core;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,7 +42,7 @@ class CarroTest {
 
     @Test
     @DisplayName("Deve retornar o preço base do carro acrescido do valor com motor elétrico")
-    void deveRetornarCarroPrecoBaseCarroComMotorEletrico() {
+    void deveRetornarPrecoBaseCarroComMotorEletrico() {
        carro = new Carro(precoBase, modelo);
        Automovel motorEletrico = new MotorEletrico(carro);
        assertEquals(130000.0, motorEletrico.getPrecoBase(), 0.1);
@@ -51,7 +50,7 @@ class CarroTest {
 
     @Test
     @DisplayName("Deve retornar o preço base do carro acrescido do valor com teto solar")
-    void deveRetornarCarroPrecoBaseCarroComTetoSolar() {
+    void deveRetornarPrecoBaseCarroComTetoSolar() {
         carro = new Carro(precoBase, modelo);
         Automovel tetoSolar = new TetoSolar(carro);
         assertEquals(110000.0, tetoSolar.getPrecoBase());
@@ -59,7 +58,7 @@ class CarroTest {
 
     @Test
     @DisplayName("Deve retornar o preço base do carro acrescido do valor com cambio automático")
-    void deveRetornarCarroPrecoBaseCarroComCambioAutomatico() {
+    void deveRetornarPrecoBaseCarroComCambioAutomatico() {
         carro = new Carro(precoBase, modelo);
         Automovel cambioAutomatico = new CambioAutomatico(carro);
         assertEquals(120000.0f, cambioAutomatico.getPrecoBase(), 0.1);
@@ -67,7 +66,7 @@ class CarroTest {
 
     @Test
     @DisplayName("Deve retornar o preço base do carro acrescido do valor com motor elétrico e com teto solar")
-    void deveRetornarCarroPrecoBaseCarroComMotorEletricoEComTetoSolar()
+    void deveRetornarPrecoBaseCarroComMotorEletricoEComTetoSolar()
     {
         carro = new Carro(precoBase, modelo);
         Automovel motorEletrico = new MotorEletrico(carro);
@@ -77,12 +76,23 @@ class CarroTest {
 
     @Test
     @DisplayName("Deve retornar o preço base do carro acrescido do valor com motor elétrico, com teto solar e com cambio automático")
-    void deveRetornarCarroPrecoBaseCarroComMotorEletricoComTetoSolarEComCambioAutomatico()
+    void deveRetornarPrecoBaseCarroComMotorEletricoComTetoSolarEComCambioAutomatico()
     {
         carro = new Carro(precoBase, modelo);
         Automovel motorEletrico = new MotorEletrico(carro);
         Automovel tetoSolar = new TetoSolar(motorEletrico);
         Automovel cambioAutomatico = new CambioAutomatico(tetoSolar);
         assertEquals(171600.0, cambioAutomatico.getPrecoBase());
+    }
+
+    @Test
+    void deveRetornarItensSerieCarroComMotorEletricoComTetoSolarEComCambioAutomatico()
+    {
+        carro = new Carro(precoBase, modelo);
+        Automovel motorEletrico = new MotorEletrico(carro);
+        Automovel tetoSolar = new TetoSolar(motorEletrico);
+        Automovel cambioAutomatico = new CambioAutomatico(tetoSolar);
+        String itensSerie = "Carro - Itens de Série: AIRBAG - SENSOR DE RÉ - Motor elétrico - Teto Solar - Câmbio Automático";
+        assertEquals(itensSerie, cambioAutomatico.getItensSerie());
     }
 }

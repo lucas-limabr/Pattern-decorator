@@ -1,4 +1,4 @@
-package core;
+package com.designPattern.decorator.core;
 
 public class TetoSolar extends AutomovelDecorator{
 
@@ -13,6 +13,6 @@ public class TetoSolar extends AutomovelDecorator{
 
     @Override
     public String getItemSerie() {
-        return "Teto Solar -";
+        return "Teto Solar";
     }
 }

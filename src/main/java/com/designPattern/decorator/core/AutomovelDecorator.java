@@ -1,6 +1,4 @@
-package core;
-
-import java.time.LocalDateTime;
+package com.designPattern.decorator.core;
 
 public abstract class AutomovelDecorator implements Automovel{
 
